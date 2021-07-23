@@ -46,12 +46,13 @@ let time = document.getElementById('time');
 let timerStrt = document.getElementById('Strt');
 let clean = document.getElementById('clean');
 clean.addEventListener('click', function () {
+    clearInterval(closeTimer);
     time.value = "";
 })
 timerStrt.addEventListener('click', function () {
     let timerMin = parseInt(time.value.slice(0, 2));
     let timerSec = parseInt(time.value.slice(3, time.length));
-    let closeTimer = setInterval(() => {
+    closeTimer = setInterval(() => {
         if (timerSec == 0) {
             timerSec = 60;
             timerMin--;
