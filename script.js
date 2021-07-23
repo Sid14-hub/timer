@@ -27,15 +27,19 @@ let start = document.getElementById('Start');
 let stop = document.getElementById('Stop');
 stop.addEventListener('click', function () {
     clearInterval(timevalue);
+    start.disabled = false;
 })
 start.addEventListener('click', function () {
     strt();
+    start.disabled = true;
 })
 reset.addEventListener('click', function () {
     sec = 0;
     min = 0;
     time1.innerText = "0" + min;
     time3.innerText = "0" + sec;
+    clearInterval(timevalue);
+    start.disabled = false;
 })
 
 let time = document.getElementById('time');
