@@ -50,8 +50,9 @@ clean.addEventListener('click', function () {
     time.value = "";
 })
 timerStrt.addEventListener('click', function () {
-    let timerMin = parseInt(time.value.slice(0, 2));
-    let timerSec = parseInt(time.value.slice(3, time.length));
+    let num = time.value.indexOf(':');
+    let timerMin = parseInt(time.value.slice(0, num));
+    let timerSec = parseInt(time.value.slice(num+1, time.length));
     closeTimer = setInterval(() => {
         if (timerSec == 0) {
             timerSec = 60;
